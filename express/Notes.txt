@@ -1,0 +1,16 @@
+Middleware
+ a)Application Level
+ b)Route Level
+ c)Error Handling
+ d)Built-in
+ e)Third Party
+
+ //for error Handling
+ app.use(err,req,res,next)
+
+ //Built in Middleware
+ 1)express.json()
+ 2)express.urlencoded
+ 3)express.static
+ 4)router
+ 
