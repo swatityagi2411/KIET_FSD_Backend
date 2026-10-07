@@ -1,23 +1,22 @@
 const checkroles=(...allowedroles)=>{
     return (req,res,next)=>{
-        const role=req.headers.role
-        if(!role)
+       // const role=req.headers.role
+        if(!req.user)
         {
-        return res.status().json({
+        return res.status(401).json({
             message:""
         })
         }
-        if(allowedroles.includes(role))
-        {
-            next();
-        }
-        else
+        if(!allowedroles.includes(req.user.role))
         {
             return res.status(403).json({
                 message:"Not allowed"
-            })
+            
+        }
+        )
+        next()
         }
     }
 
 }
-module.exports = checkRoles;
+module.exports = checkroles;

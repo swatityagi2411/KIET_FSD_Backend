@@ -6,6 +6,7 @@ app.use(express.json())//middleware
 const PORT=process.env.PORT||3030
 
 const studentRoutes=require('./Routes/studentRoutes')
+const authRoutes=require("./Routes/authRoute")
 
 mongoose.connect(process.env.MONGODB_URL)
 .then(()=>{
@@ -19,6 +20,7 @@ console.log("Databse can't connected",error)
 
 
 app.use('/students',studentRoutes)
+app.use('/authroute',authRoutes)
 
 
 //Server Listening on Port 3000
