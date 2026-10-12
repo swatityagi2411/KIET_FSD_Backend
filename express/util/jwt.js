@@ -1,28 +1,29 @@
 const jwt=require("jsonwebtoken")
 const generateTokenAccess=(user)=>{
-    jwt.sign(
+    return jwt.sign(
         {
             role:user.role,
             id:user._id
         },
     process.env.SECRET_KEY,
     {
-        expiresIn:"1h"
+        expiresIn:"15m"
     }
     )
 }
 const generateTokenRefresh=(user)=>{
-    jwt.sign(
+    return jwt.sign(
         {
            
             id:user._id
         },
     process.env.SECRET_KEY,
     {
-        expiresIn:"1h"
+        expiresIn:"7d"
     }
     )
 }
 
 
-module.exports=generateTokenAccess
+module.exports=
+{generateTokenAccess,generateTokenRefresh}

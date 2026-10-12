@@ -5,9 +5,11 @@ const userSchema=mongoose.Schema({
         required:true
     },
     email:{
-        type:Number,
+        type:String,
         required:true,
-        unique:true
+        unique:true,
+        lowercase: true,
+        trim: true
 
     },
     password:{
@@ -18,6 +20,10 @@ const userSchema=mongoose.Schema({
         type:String,
         enum:['student','admin','teacher'],
         default:'student'
+    },
+    refreshTokenHash: {
+            type: String,
+            default: null
     }
 })
 
