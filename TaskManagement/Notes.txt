@@ -1,0 +1,22 @@
+Pagination using cursor
+const express = require('express');
+const router = express.Router();
+const Task = require("../model/taskSchema");
+const mongoose = require("mongoose");
+const asyncHandler = require("../utils/asyncHandler"); // Assuming this is your utils path
+
+
+   
+
+_________________________________Rate Limit_____________________________________
+step 1: Install express-rate-limit
+step 2: require that module in server.js
+step 3: use rate limit method   
+const limiter=rateLimit({
+    use some parameters like
+    windowMs:
+    max:
+    message:
+})
+
+step 4:use limiter in app.use()
