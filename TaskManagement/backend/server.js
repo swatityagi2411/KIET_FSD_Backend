@@ -6,13 +6,15 @@ require("dotenv").config();
 
 const taskRoute = require("./router/taskRoute");
 const userRoute = require("./router/userRoute");
-const ratelimit=require("express-rate-limit")
+const rateLimit= require("express-rate-limit")
 
 const app = express();
-const limit=ratelimit({
+const limit=rateLimit({
   windowMs:15*60*1000,
-  max: 15,
-  message:"You have exceeded hit limits of API"
+  limit:10,
+  message:"Exceeded limit of accessing api in provided time",
+  standardHeaders:'draft-8',
+  legacyHeaders:false
 })
 app.use(cors());
 app.use(express.json());

@@ -14,9 +14,12 @@ step 2: require that module in server.js
 step 3: use rate limit method   
 const limiter=rateLimit({
     use some parameters like
-    windowMs:
-    max:
-    message:
+   windowMs:	Time window for counting requests
+limit:Maximum allowed requests
+message :	Response when limit is exceeded
+standardHeaders:(draft-8)	Sends standard rate-limit headers
+legacyHeaders:(false)	Controls older X-RateLimit headers
+
 })
 
 step 4:use limiter in app.use()
