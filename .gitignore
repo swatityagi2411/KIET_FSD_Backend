@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and runtime files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build and test output
+dist/
+dist-ssr/
+build/
+coverage/
+.nyc_output/
+.cache/
+.parcel-cache/
+.vite/
+
+# Test and tool caches
+.eslintcache
+.pytest_cache/
+__pycache__/
+*.py[cod]
+
+# Local databases and uploaded/runtime data
+*.sqlite
+*.sqlite3
+uploads/
+tmp/
+temp/
+
+# Editor and operating-system files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Optional local tooling
+.vercel/
+.netlify/
+
